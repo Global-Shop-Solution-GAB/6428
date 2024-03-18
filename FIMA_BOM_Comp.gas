@@ -1,0 +1,694 @@
+Program.Sub.ScreenSU.Start
+gui.F_CompRep..create
+gui.F_CompRep..caption("BOM Comparison Reporting")
+gui.F_CompRep..size(9795,6330)
+gui.F_CompRep..position(0,0)
+gui.F_CompRep..event(unload,ProgramEnd)
+gui.F_CompRep..fontname("arial")
+gui.F_CompRep..fontsize(8)
+gui.F_CompRep..forecolor(0)
+gui.F_CompRep..fontstyle(False,False,False,False,False)
+gui.F_CompRep..BackColor(-2147483633)
+gui.F_CompRep..controlbox(True)
+gui.F_CompRep..maxbutton(True)
+gui.F_CompRep..minbutton(True)
+gui.F_CompRep..mousepointer(0)
+gui.F_CompRep..moveable(True)
+gui.F_CompRep..sizeable(True)
+gui.F_CompRep..ShowInTaskBar(True)
+gui.F_CompRep..titlebar(True)
+gui.F_CompRep.frmRType.create(frame)
+gui.F_CompRep.frmRType.caption("Select Report Type")
+gui.F_CompRep.frmRType.size(9210,795)
+gui.F_CompRep.frmRType.position(200,200)
+gui.F_CompRep.frmRType.visible(True)
+gui.F_CompRep.frmRType.fontname("arial")
+gui.F_CompRep.frmRType.fontsize(8)
+gui.F_CompRep.optRep1.create(option)
+gui.F_CompRep.optRep1.caption("BOM Comparison")
+gui.F_CompRep.optRep1.visible(True)
+gui.F_CompRep.optRep1.size(1680,495)
+gui.F_CompRep.optRep1.zorder(0)
+gui.F_CompRep.optRep1.tabstop(True)
+gui.F_CompRep.optRep1.tabindex(1)
+gui.F_CompRep.optRep1.position(200,200)
+gui.F_CompRep.optRep1.enabled(True)
+gui.F_CompRep.optRep1.parent("frmrtype")
+gui.F_CompRep.optRep1.fontname("arial")
+gui.F_CompRep.optRep1.fontsize(8)
+gui.F_CompRep.optRep2.create(option)
+gui.F_CompRep.optRep2.caption("BOM Comparison by Date Range")
+gui.F_CompRep.optRep2.visible(True)
+gui.F_CompRep.optRep2.size(2820,495)
+gui.F_CompRep.optRep2.zorder(0)
+gui.F_CompRep.optRep2.tabstop(True)
+gui.F_CompRep.optRep2.tabindex(2)
+gui.F_CompRep.optRep2.position(5200,200)
+gui.F_CompRep.optRep2.enabled(True)
+gui.F_CompRep.optRep2.parent("frmrtype")
+gui.F_CompRep.optRep2.fontname("arial")
+gui.F_CompRep.optRep2.fontsize(8)
+gui.F_CompRep.cmdRun.create(button)
+gui.F_CompRep.cmdRun.caption("Run Report")
+gui.F_CompRep.cmdRun.visible(True)
+gui.F_CompRep.cmdRun.size(1020,375)
+gui.F_CompRep.cmdRun.zorder(0)
+gui.F_CompRep.cmdRun.tabstop(True)
+gui.F_CompRep.cmdRun.tabindex(3)
+gui.F_CompRep.cmdRun.position(2200,1200)
+gui.F_CompRep.cmdRun.enabled(True)
+gui.F_CompRep.cmdRun.fontname("arial")
+gui.F_CompRep.cmdRun.fontsize(8)
+gui.F_CompRep.cmdRun.event(click,RPT_Select)
+gui.F_CompRep.cmdPrint.create(button)
+gui.F_CompRep.cmdPrint.caption("Print Report")
+gui.F_CompRep.cmdPrint.visible(True)
+gui.F_CompRep.cmdPrint.size(1080,375)
+gui.F_CompRep.cmdPrint.zorder(0)
+gui.F_CompRep.cmdPrint.tabstop(True)
+gui.F_CompRep.cmdPrint.tabindex(4)
+gui.F_CompRep.cmdPrint.position(6300,1200)
+gui.F_CompRep.cmdPrint.enabled(True)
+gui.F_CompRep.cmdPrint.fontname("arial")
+gui.F_CompRep.cmdPrint.fontsize(8)
+gui.F_CompRep.cmdPrint.event(click,Report)
+gui.F_CompRep.lvwReport.create(listview)
+gui.F_CompRep.lvwReport.view(3)
+gui.F_CompRep.lvwReport.addlistviewcolumn("Parent BOM",1980,0)
+gui.F_CompRep.lvwReport.addlistviewcolumn("Weight",1000,1)
+gui.F_CompRep.lvwReport.addlistviewcolumn("Hours",1000,1)
+gui.F_CompRep.lvwReport.addlistviewcolumn("Material",1000,1)
+gui.F_CompRep.lvwReport.addlistviewcolumn("Labor",1000,1)
+gui.F_CompRep.lvwReport.addlistviewcolumn("Overhead",1000,1)
+gui.F_CompRep.lvwReport.addlistviewcolumn("Outside",1000,1)
+gui.F_CompRep.lvwReport.addlistviewcolumn("Total",1000,1)
+gui.F_CompRep.lvwReport.visible(True)
+gui.F_CompRep.lvwReport.size(9315,3780)
+gui.F_CompRep.lvwReport.zorder(0)
+gui.F_CompRep.lvwReport.tabstop(True)
+gui.F_CompRep.lvwReport.tabindex(5)
+gui.F_CompRep.lvwReport.position(100,1800)
+gui.F_CompRep.lvwReport.enabled(True)
+gui.F_CompRep.lvwReport.fontname("arial")
+gui.F_CompRep.lvwReport.fontsize(8)
+
+
+gui.F_Date..create
+gui.F_Date..caption("Select Date Range")
+gui.F_Date..size(4815,2445)
+gui.F_Date..position(0,0)
+gui.F_Date..event(unload,ProgramEnd)
+gui.F_Date..fontname("arial")
+gui.F_Date..fontsize(8)
+gui.F_Date..forecolor(0)
+gui.F_Date..fontstyle(False,False,False,False,False)
+gui.F_Date..BackColor(-2147483633)
+gui.F_Date..controlbox(True)
+gui.F_Date..maxbutton(True)
+gui.F_Date..minbutton(True)
+gui.F_Date..mousepointer(0)
+gui.F_Date..moveable(True)
+gui.F_Date..sizeable(True)
+gui.F_Date..ShowInTaskBar(True)
+gui.F_Date..titlebar(True)
+gui.F_Date.dtpStart.create(datepicker)
+gui.F_Date.dtpStart.visible(True)
+gui.F_Date.dtpStart.size(1935,375)
+gui.F_Date.dtpStart.zorder(0)
+gui.F_Date.dtpStart.position(260,575)
+gui.F_Date.dtpStart.enabled(True)
+gui.F_Date.dtpStart.fontname("arial")
+gui.F_Date.dtpEnd.create(datepicker)
+gui.F_Date.dtpEnd.visible(True)
+gui.F_Date.dtpEnd.size(1935,375)
+gui.F_Date.dtpEnd.zorder(0)
+gui.F_Date.dtpEnd.position(2370,560)
+gui.F_Date.dtpEnd.enabled(True)
+gui.F_Date.dtpEnd.fontname("arial")
+gui.F_Date.lblStart.create(label)
+gui.F_Date.lblStart.caption("Start Date")
+gui.F_Date.lblStart.visible(True)
+gui.F_Date.lblStart.size(1095,255)
+gui.F_Date.lblStart.zorder(0)
+gui.F_Date.lblStart.position(290,275)
+gui.F_Date.lblStart.enabled(True)
+gui.F_Date.lblStart.fontname("arial")
+gui.F_Date.lblStart.fontsize(8)
+gui.F_Date.lblStart.BackColor(-2147483633)
+gui.F_Date.lblEnd.create(label)
+gui.F_Date.lblEnd.caption("End Date")
+gui.F_Date.lblEnd.visible(True)
+gui.F_Date.lblEnd.size(1095,255)
+gui.F_Date.lblEnd.zorder(0)
+gui.F_Date.lblEnd.position(2415,290)
+gui.F_Date.lblEnd.enabled(True)
+gui.F_Date.lblEnd.fontname("arial")
+gui.F_Date.lblEnd.fontsize(8)
+gui.F_Date.lblEnd.BackColor(-2147483633)
+gui.F_Date.cmdRun.create(button)
+gui.F_Date.cmdRun.caption("Run Report")
+gui.F_Date.cmdRun.visible(True)
+gui.F_Date.cmdRun.size(975,375)
+gui.F_Date.cmdRun.zorder(0)
+gui.F_Date.cmdRun.position(1800,1300)
+gui.F_Date.cmdRun.enabled(True)
+gui.F_Date.cmdRun.fontname("arial")
+gui.F_Date.cmdRun.fontsize(8)
+gui.F_Date.cmdRun.event(click,DateClose)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Variable.Global.sBoM1.Declare(String)
+Variable.Global.sBOM2.Declare(String)
+Variable.Global.sEDate.Declare(String)
+Variable.Global.sSDate.Declare(String)
+Variable.Global.dateStart.Declare(Date)
+Variable.Global.dateEnd.Declare(Date)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+Variable.Local.bExists.Declare(Boolean)
+
+F.ODBC.Connection!conP.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+F.ODBC.Connection!conP.TableExists("ATG_BOM_COMP",Variable.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists,=,False)
+	F.Intrinsic.UI.Msgbox("Table ATG_BOM_Comp does not exists, please run script")
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndIf
+'call report sub
+Gui.F_CompRep..Show
+'F.Intrinsic.Control.CallSub("Select_BOM")
+
+Program.Sub.Main.End
+
+Program.Sub.Report.Start
+Variable.Local.sText.Declare(String)
+F.Intrinsic.Printer.SelectPrinterDialog
+
+'F.Intrinsic.Printer.NewPage
+F.Intrinsic.Printer.SetOrientation(2)
+F.Intrinsic.Printer.Position(4500,100)
+
+F.Intrinsic.Control.If(V.Screen.F_CompRep!optRep1.Value,=,True)
+	F.Intrinsic.String.Concat("BOM Comparison Report for BOM's ",V.Global.sBoM1.Trim," and ",V.Global.sBOM2.Trim,V.Local.sText)
+F.Intrinsic.Control.ElseIf(V.Screen.F_CompRep!optRep2.Value,=,True)
+	F.Intrinsic.String.Concat("BOM Comparison Report for Dates Starting ",V.Global.ssDate.Trim," and Ending On ",V.Global.sEDate.Trim,V.Local.sText)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Printer.PrintRet(V.Local.sText)
+F.Intrinsic.Printer.PrintRet("")
+F.Intrinsic.printer.printlistview("F_CompRep","lvwReport",V.Local.sText,0,1)
+
+
+Program.Sub.Report.End
+
+Program.Sub.Select_BOM.Start
+Variable.local.sRet.Declare(String)
+Variable.local.sTemp.Declare(String)
+Variable.local.sTitles.Declare(String)
+Variable.local.iWidths.Declare(Long)
+V.Local.iAlign.Declare(Long)
+V.Local.sFormat.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sDate.Declare(String)
+V.Local.iGrp.Declare(Long)
+
+'F.Intrinsic.Debug.Stop
+F.ODBC.Connection!conP.OpenRecordsetRO("rstJob","Select * from ATG_BOM_Comp")
+F.Intrinsic.Control.If(V.Odbc.conP!rstJob.EOF,=,True)
+	F.ODBC.conP!rstJob.Close
+	F.Intrinsic.Control.end
+F.Intrinsic.Control.EndIf
+F.ODBC.conP!rstJob.Close
+ Function.intrinsic.string.split("BOM*!*Buildup Date","*!*",Variable.Local.sTitles)
+Function.intrinsic.string.split("2000*!*1000","*!*",Variable.Local.iWidths)
+Function.Intrinsic.String.Split("0*!*6","*!*",Variable.Local.iAlign)
+Function.Intrinsic.String.Split("*!*dd/mm/yy","*!*",Variable.Local.SFormat)
+
+F.Intrinsic.Control.DoUntil(V.Global.sBOM2,<>,"")
+	Function.Intrinsic.Ui.Browser("Select a BOM","conP","Select  Parent,CreateDt From ATG_BOM_Comp order by Parent",Variable.Local.Stitles,Variable.Local.Iwidths,7200,6000,Variable.Local.sformat,Variable.Local.iAlign,Variable.Local.Sret)
+	Function.intrinsic.control.if(Variable.Local.sRet,"=","***CANCEL***")
+		Function.intrinsic.ui.msgbox("No job was selected!")
+		F.Intrinsic.Control.ExitDo
+	Function.intrinsic.control.else
+		Function.intrinsic.string.split(Variable.Local.sRet,"*!*",Variable.Local.sRet)
+		F.Intrinsic.Control.If(V.Global.sBoM1,=,"")
+			V.Global.sBoM1.Set(V.Local.sRet(0))
+		F.Intrinsic.Control.ElseIf(V.Global.sBOM2,=,"")
+			F.Intrinsic.Control.AndIf(V.Global.sBoM1,<>,"")
+				V.Global.sBOM2.Set(V.Local.sRet(0))
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.ExitDo
+		F.Intrinsic.Control.EndIf
+	'Function.intrinsic.string.concat("You selected ",Variable.Local.sRet(0),Variable.Local.sTemp)
+	'Function.intrinsic.ui.msgbox(Variable.Local.sTemp)
+	 Function.intrinsic.control.endif
+F.Intrinsic.Control.Loop
+'F.Intrinsic.Debug.Stop
+F.Intrinsic.Control.If(V.Global.sBoM1.Trim,<>,"")
+	F.Intrinsic.String.Format(V.Ambient.Date,"YYYY-MM-DD",V.Local.sDate)
+	'F.Intrinsic.ui.Msgbox(V.Global.sBoM1.Trim)
+	'F.Intrinsic.UI.Msgbox(V.Local.sDate)
+	F.ODBC.Connection!conP.OpenRecordsetRO("rstGrp","Select Top 1 Grp from ATG_BOM_Comp order by Grp Desc")
+	F.Intrinsic.Control.If(V.Odbc.conP!rstGrp.eof,=,True)
+		V.Local.iGrp.Set(0)
+	F.Intrinsic.Control.Else
+		V.local.iGrp.Set(V.Odbc.conP!rstGrp.FieldValLong!Grp)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Math.Add(V.Local.iGrp,1,V.Local.iGrp)
+	F.Intrinsic.String.Concat("Update ATG_BOM_Comp set CompDt='",V.Local.sDate,"',Seq=1,Grp=",V.Local.iGrp," where Parent='",V.Global.sBoM1.Trim,"'",V.Local.sSQL)
+	'F.Intrinsic.UI.Msgbox(V.Local.sSQL)
+	F.ODBC.Connection!conP.Execute(V.Local.sSQL)
+	'F.ODBC.conP!rstBOM1.Close
+	F.Intrinsic.String.Concat("Update ATG_BOM_Comp set CompDt='",V.Local.sDate,"',Seq=2,Grp=",V.Local.iGrp," where Parent='",V.Global.sBoM2.Trim,"'",V.Local.sSQL)
+	F.ODBC.Connection!conP.Execute(V.Local.sSQL)
+	'F.ODBC.conP!rstBOM2.Close
+	F.ODBC.conP!rstGrp.Close
+	'F.Intrinsic.UI.Msgbox(V.Global.sBoM1)
+	'F.Intrinsic.UI.Msgbox(V.Global.sBOM2)
+	F.Intrinsic.Control.CallSub("Fill_LVW")
+Function.Intrinsic.Control.Else
+	Gui.F_CompRep..Show
+F.Intrinsic.Control.EndIf
+
+Program.Sub.Select_BOM.End
+
+Program.Sub.ProgramEnd.Start
+F.ODBC.Connection!conP.Close
+
+F.Intrinsic.Control.End
+
+Program.Sub.ProgramEnd.End
+
+Program.Sub.Fill_LVW.Start
+Variable.Local.sSQL.Declare(String)
+V.Local.sParent.Declare(String)
+V.Local.fGWT.Declare(Long)
+V.Local.fLHrs.Declare(Long)
+V.Local.fMtl.Declare(Long)
+V.Local.fLab.Declare(Long)
+V.Local.fOvhd.Declare(Long)
+V.Local.fOut.Declare(Long)
+V.Local.fTot.Declare(Long)
+V.Local.fGWT1.Declare(Float)
+V.Local.fLHrs1.Declare(Float)
+V.Local.fMtl1.Declare(Float)
+V.Local.fLab1.Declare(Float)
+V.Local.fOvhd1.Declare(Float)
+V.Local.fOut1.Declare(Float)
+V.Local.fTot1.Declare(Float)
+V.Local.iMult.Declare(Long)
+V.Local.fBTot.Declare(Float)
+
+V.Local.iMult.Set(100)
+Gui.F_CompRep.lvwReport.ClearItems
+
+F.Intrinsic.String.Concat("Select * from ATG_BOM_Comp where Parent='",V.Global.sBoM1,"'",V.Local.sSQL)
+F.ODBC.connection!conP.OpenRecordsetRO("rstComp",V.Local.sSQL)
+'F.Intrinsic.Control.DoUntil(V.Odbc.conP!rstComp.EOF,=,True)
+F.Intrinsic.Control.If(V.Odbc.conP!rstComp.EOF,=,False)
+	Gui.F_CompRep.lvwReport.AddListItem(V.Odbc.conp!rstComp.fieldvalstring!Parent,V.Odbc.conp!rstcomp.fieldvalstring!Parent)
+	Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Odbc.conP!rstComp.FieldValString!Parent,1,V.Odbc.conP!rstComp.FieldValFloat!GWt)
+	V.Local.fGWT1.Set(V.Odbc.conP!rstComp.FieldValFloat!GWT)
+	Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Odbc.conP!rstComp.FieldValString!Parent,2,V.Odbc.conP!rstComp.FieldValFloat!Labor_Hrs)
+	V.Local.fLHrs1.Set(V.Odbc.conP!rstComp.FieldValFloat!Labor_Hrs)
+	Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Odbc.conP!rstComp.FieldValString!Parent,3,V.Odbc.conP!rstComp.FieldValFloat!Material)
+	V.Local.fMtl1.Set(V.Odbc.conP!rstComp.FieldValFloat!Material)
+	Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Odbc.conP!rstComp.FieldValString!Parent,4,V.Odbc.conP!rstComp.FieldValFloat!Labor)
+	V.Local.fLab1.Set(V.Odbc.conP!rstComp.FieldValFloat!Labor)
+	Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Odbc.conP!rstComp.FieldValString!Parent,5,V.Odbc.conP!rstComp.FieldValFloat!Overhead)
+	V.Local.fOvhd1.Set(V.Odbc.conP!rstComp.FieldValFloat!Overhead)
+	Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Odbc.conP!rstComp.FieldValString!Parent,6,V.Odbc.conP!rstComp.FieldValFloat!Outside)
+	V.Local.fOut1.Set(V.Odbc.conP!rstComp.FieldValFloat!Outside)
+	F.Intrinsic.Math.Add(V.ODBC.conP!rstComp.FieldValFloat!Material,V.ODBC.conP!rstComp.FieldValFloat!Labor,V.ODBC.conP!rstComp.FieldValFloat!overhead,V.ODBC.conP!rstComp.FieldValFloat!Outside,V.Local.fBTot)
+	Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Odbc.conP!rstComp.FieldValString!Parent,7,V.Local.fBTot)
+	V.Local.fTot1.Set(V.Local.fBTot)
+	F.Intrinsic.Control.If(V.Local.fBTot,<>,V.ODBC.conP!rstComp.FieldValFloat!Total)
+		F.Intrinsic.String.Concat("Update ATG_BOM_COMP set Total=",V.Local.fBTot," where Parent='",V.ODBC.conP!rstComp.FieldValString!Parent,"'",V.Local.sSQL)
+		F.ODBC.Connection!conP.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+	'F.ODBC.conP!rstComp.MoveNext
+'F.Intrinsic.Control.Loop
+F.ODBC.conP!rstComp.Close
+F.Intrinsic.String.Concat("Select * from ATG_BOM_Comp where Parent='",V.Global.sBOM2,"'",V.Local.sSQL)
+F.ODBC.connection!conP.OpenRecordsetRO("rstComp",V.Local.sSQL)
+F.Intrinsic.Control.if(V.Odbc.conP!rstComp.EOF,=,False)
+	Gui.F_CompRep.lvwReport.AddListItem(V.Odbc.conp!rstComp.fieldvalstring!Parent,V.Odbc.conp!rstcomp.fieldvalstring!Parent)
+	Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Odbc.conP!rstComp.FieldValString!Parent,1,V.Odbc.conP!rstComp.FieldValFloat!GWt)
+	'F.Intrinsic.Debug.Stop
+	Function.Intrinsic.Control.If(V.Odbc.conP!rstComp.FieldValFloat!GWt,<>,0)
+		F.Intrinsic.Control.If(V.Local.fGWT1,<>,0)
+			F.Intrinsic.Math.Div(V.Odbc.conP!rstComp.FieldValFloat!GWt,V.Local.fGWT1,V.Local.fGWT1)
+			F.Intrinsic.Math.Mult(V.Local.fGWT1,V.Local.iMult,V.Local.fGWT)
+		F.Intrinsic.Control.Else
+			V.Local.fGWT.Set(0)
+		F.Intrinsic.Control.Endif
+	F.Intrinsic.Control.Else
+		V.Local.fGWT.Set(0)
+	F.Intrinsic.Control.EndIf
+	Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Odbc.conP!rstComp.FieldValString!Parent,2,V.Odbc.conP!rstComp.FieldValFloat!Labor_Hrs)
+	Function.Intrinsic.Control.If(V.Odbc.conP!rstComp.FieldValFloat!Labor_Hrs,<>,0)
+		Function.Intrinsic.Control.If(V.Local.fLHrs1,<>,0)
+			F.Intrinsic.Math.Div(V.Odbc.conP!rstComp.FieldValFloat!Labor_Hrs,V.Local.fLHrs1,V.Local.fLHrs1)
+			F.Intrinsic.Math.Mult(V.Local.fLHrs1,V.Local.iMult,V.Local.fLHrs)
+		F.Intrinsic.Control.Else
+			V.Local.fLHrs.Set(0)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		V.Local.fLHrs.Set(0)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Debug.Stop
+	Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Odbc.conP!rstComp.FieldValString!Parent,3,V.Odbc.conP!rstComp.FieldValFloat!Material)
+	Function.Intrinsic.Control.If(V.Odbc.conP!rstComp.FieldValFloat!Material,<>,0)
+		F.Intrinsic.Control.If(V.Local.fMtl1,<>,0)
+			F.Intrinsic.Math.Div(V.Odbc.conP!rstComp.FieldValFloat!Material,V.Local.fMtl1,V.Local.fMtl1)
+			F.Intrinsic.Math.Mult(V.Local.fMtl1,V.Local.iMult,V.Local.fMtl)
+		F.Intrinsic.Control.Else
+			V.Local.fMtl.Set(0)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		V.Local.fMtl.Set(0)
+	F.Intrinsic.Control.EndIf
+	Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Odbc.conP!rstComp.FieldValString!Parent,4,V.Odbc.conP!rstComp.FieldValFloat!Labor)
+	Function.Intrinsic.Control.If(V.Odbc.conP!rstComp.FieldValFloat!Labor,<>,0)
+		F.Intrinsic.Control.If(V.Local.fLab1,<>,0)
+			F.Intrinsic.Math.Div(V.Odbc.conP!rstComp.FieldValFloat!Labor,V.Local.fLab1,V.Local.fLab1)
+			F.Intrinsic.Math.Mult(V.Local.fLab1,V.Local.iMult,V.Local.fLab)
+		F.Intrinsic.Control.Else
+			V.Local.fLab.Set(0)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		V.Local.fLab.Set(0)
+	F.Intrinsic.Control.EndIf
+	Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Odbc.conP!rstComp.FieldValString!Parent,5,V.Odbc.conP!rstComp.FieldValFloat!Overhead)
+	Function.Intrinsic.Control.If(V.Odbc.conP!rstComp.FieldValFloat!OverHead,<>,0)
+		F.Intrinsic.Control.If(V.Local.fOvhd1,<>,0)
+			F.Intrinsic.Math.Div(V.Odbc.conP!rstComp.FieldValFloat!Overhead,V.Local.fOvhd1,V.Local.fOvhd1)
+			F.Intrinsic.Math.Mult(V.Local.fOvhd1,V.Local.iMult,V.Local.fOvhd)
+		F.Intrinsic.Control.Else
+			V.Local.fOvhd.Set(0)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		V.Local.fOvhd.Set(0)
+	F.Intrinsic.Control.EndIf
+	'F.Intrinsic.Debug.Stop
+	Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Odbc.conP!rstComp.FieldValString!Parent,6,V.Odbc.conP!rstComp.FieldValFloat!Outside)
+	Function.Intrinsic.Control.If(V.Odbc.conP!rstComp.FieldValFloat!Outside,<>,0)
+		F.Intrinsic.Control.If(V.Local.fOut1,<>,0)
+			F.Intrinsic.Math.Div(V.Odbc.conP!rstComp.FieldValFloat!Outside,V.Local.fOut1,V.Local.fOut1)
+			F.Intrinsic.Math.Mult(V.Local.fOut1,V.Local.iMult,V.Local.fOut)
+		F.Intrinsic.Control.Else
+			V.Local.fOut.Set(0)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		V.Local.fOut.Set(0)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Math.Add(V.ODBC.conP!rstComp.FieldValFloat!Material,V.ODBC.conP!rstComp.FieldValFloat!Labor,V.ODBC.conP!rstComp.FieldValFloat!overhead,V.ODBC.conP!rstComp.FieldValFloat!Outside,V.Local.fBTot)
+	Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Odbc.conP!rstComp.FieldValString!Parent,7,V.Local.fBTot)
+'	Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Odbc.conP!rstComp.FieldValString!Parent,7,V.Odbc.conP!rstComp.FieldValFloat!Total)
+	F.Intrinsic.Control.If(V.Local.fBTot,<>,V.ODBC.conP!rstComp.FieldValFloat!Total)
+		F.Intrinsic.String.Concat("Update ATG_BOM_COMP set Total=",V.Local.fBTot," where Parent='",V.ODBC.conP!rstComp.FieldValString!Parent,"'",V.Local.sSQL)
+		F.ODBC.Connection!conP.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+	Function.Intrinsic.Control.If(V.Odbc.conP!rstComp.FieldValFloat!Total,<>,0)
+		F.Intrinsic.Control.If(V.Local.fTot1,<>,0)
+			F.Intrinsic.Math.Div(V.Local.fBTot,V.Local.fTot1,V.Local.fTot1)
+	'		F.Intrinsic.Math.Div(V.Odbc.conP!rstComp.FieldValFloat!Total,V.Local.fTot1,V.Local.fTot1)
+			F.Intrinsic.Math.Mult(V.Local.fTot1,V.Local.iMult,V.Local.fTot)
+		F.Intrinsic.Control.Else
+			V.Local.fTot.Set(0)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		V.Local.fTot.Set(0)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+	'F.ODBC.conP!rstComp.MoveNext
+'F.Intrinsic.Control.Loop
+F.ODBC.conP!rstComp.Close
+
+V.Local.sParent.Set("Comparison")
+Gui.F_CompRep.lvwReport.AddListItem(V.Local.sParent,"Comparison (Percent)")
+Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,1,V.Local.fGWT)
+Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,2,V.Local.fLHrs)
+Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,3,V.Local.fMtl)
+Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,4,V.Local.fLab)
+Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,5,V.Local.fOvhd)
+Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,6,V.Local.fOut)
+Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,7,V.Local.fTot)
+
+
+Gui.F_CompRep.cmdRun.Enabled(True)
+
+
+
+Program.Sub.Fill_LVW.End
+
+Program.Sub.DateRange.Start
+V.Local.sSQL.Declare(String)
+V.Local.dateStart.Declare(Date)
+V.Local.dateEnd.Declare(Date)
+V.Local.sParent.Declare(String)
+V.Local.fGWT.Declare(Long)
+V.Local.fLHrs.Declare(Long)
+V.Local.fMtl.Declare(Long)
+V.Local.fLab.Declare(Long)
+V.Local.fOvhd.Declare(Long)
+V.Local.fOut.Declare(Long)
+V.Local.fTot.Declare(Long)
+V.Local.fGWT1.Declare(Float)
+V.Local.fLHrs1.Declare(Float)
+V.Local.fMtl1.Declare(Float)
+V.Local.fLab1.Declare(Float)
+V.Local.fOvhd1.Declare(Float)
+V.Local.fOut1.Declare(Float)
+V.Local.fTot1.Declare(Float)
+V.Local.iMult.Declare(Long)
+V.Local.iNo.Declare(Long)
+V.Local.f2GWT.Declare(Long)
+V.Local.f2LHrs.Declare(Long)
+V.Local.f2Mtl.Declare(Long)
+V.Local.f2Lab.Declare(Long)
+V.Local.f2Ovhd.Declare(Long)
+V.Local.f2Out.Declare(Long)
+V.Local.f2Tot.Declare(Long)
+V.Local.f1GWT1.Declare(Float)
+V.Local.f1LHrs1.Declare(Float)
+V.Local.f1Mtl1.Declare(Float)
+V.Local.f1Lab1.Declare(Float)
+V.Local.f1Ovhd1.Declare(Float)
+V.Local.f1Out1.Declare(Float)
+V.Local.f1Tot1.Declare(Float)
+
+V.Local.iMult.Set(100)
+V.Local.iNo.Set(1)
+Gui.F_CompRep.lvwReport.ClearItems
+
+F.Intrinsic.String.Concat("Select * from ATG_BOM_Comp where CompDt>='",V.Global.sSDate,"' and CompDt<='",V.Global.sEdate,"' order by Compdt,grp,seq",V.Local.sSQL)
+'F.Intrinsic.UI.Msgbox(V.Local.sSQL)
+'F.Intrinsic.Debug.Stop
+F.ODBC.Connection!conP.OpenRecordsetRO("rstDate",V.Local.sSQL)
+F.Intrinsic.Control.DoUntil(V.Odbc.conP!rstDate.EOF,=,True)
+	F.Intrinsic.Control.If(V.Odbc.conP!rstDate.FieldValLong!Seq,=,1)
+		Gui.F_CompRep.lvwReport.AddListItem(V.Odbc.conp!rstDate.fieldvalstring!Parent,V.Odbc.conp!rstDate.fieldvalstring!Parent)
+		
+		'F.Intrinsic.UI.Msgbox(V.Odbc.conp!rstDate.fieldvalstring!Parent)
+		Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Odbc.conP!rstDate.FieldValString!Parent,1,V.Odbc.conP!rstDate.FieldValFloat!GWt)
+		V.Local.fGWT1.Set(V.Odbc.conP!rstDate.FieldValFloat!GWT)
+		F.Intrinsic.Math.Add(V.Local.f1GWT1,V.ODBC.conP!rstDate.FieldValFloat!GWt,V.Local.f1GWT1)
+		Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Odbc.conP!rstDate.FieldValString!Parent,2,V.Odbc.conP!rstDate.FieldValFloat!Labor_Hrs)
+		V.Local.fLHrs1.Set(V.Odbc.conP!rstDate.FieldValFloat!Labor_Hrs)
+		F.Intrinsic.Math.Add(V.Local.f1LHrs1,V.ODBC.conP!rstDate.FieldValFloat!Labor_Hrs,V.Local.f1LHrs1)
+		Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Odbc.conP!rstDate.FieldValString!Parent,3,V.Odbc.conP!rstDate.FieldValFloat!Material)
+		V.Local.fMtl1.Set(V.Odbc.conP!rstDate.FieldValFloat!Material)
+		F.Intrinsic.Math.Add(V.Local.f1Mtl1,V.ODBC.conP!rstDate.FieldValFloat!Material,V.Local.f1Mtl1)
+		Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Odbc.conP!rstDate.FieldValString!Parent,4,V.Odbc.conP!rstDate.FieldValFloat!Labor)
+		V.Local.fLab1.Set(V.Odbc.conP!rstDate.FieldValFloat!Labor)
+		F.Intrinsic.Math.Add(V.Local.f1Lab1,V.ODBC.conP!rstDate.FieldValFloat!Labor,V.Local.f1Lab1)
+		Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Odbc.conP!rstDate.FieldValString!Parent,5,V.Odbc.conP!rstDate.FieldValFloat!Overhead)
+		V.Local.fOvhd1.Set(V.Odbc.conP!rstDate.FieldValFloat!Overhead)
+		F.Intrinsic.Math.Add(V.Local.f1Ovhd1,V.ODBC.conP!rstDate.FieldValFloat!Overhead,V.Local.f1OvHd1)
+		Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Odbc.conP!rstDate.FieldValString!Parent,6,V.Odbc.conP!rstDate.FieldValFloat!Outside)
+		V.Local.fOut1.Set(V.Odbc.conP!rstDate.FieldValFloat!Outside)
+		F.Intrinsic.Math.Add(V.Local.f1Out1,V.ODBC.conP!rstDate.FieldValFloat!Outside,V.Local.f1Out1)
+		Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Odbc.conP!rstDate.FieldValString!Parent,7,V.Odbc.conP!rstDate.FieldValFloat!Total)
+		V.Local.fTot1.Set(V.Odbc.conP!rstDate.FieldValFloat!Total)
+		F.Intrinsic.Math.Add(V.Local.f1Tot1,V.ODBC.conP!rstDate.FieldValFloat!Total,V.Local.f1Tot1)
+	F.Intrinsic.Control.ElseIf(V.Odbc.conP!rstDate.FieldValLong!Seq,=,2)
+		V.Local.sParent.Set(V.Odbc.conP!rstDate.FieldValString!Parent)
+		Gui.F_CompRep.lvwReport.AddListItem(V.Local.sParent,V.Local.sParent)
+		Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,1,V.Odbc.conP!rstDate.FieldValFloat!GWt)
+		'F.Intrinsic.Debug.Stop
+		'F.Intrinsic.UI.Msgbox(V.Local.sParent)
+		Function.Intrinsic.Control.If(V.Odbc.conP!rstDate.FieldValFloat!GWt,>,0)
+			F.Intrinsic.Control.If(V.Local.fGWT1,<>,0)
+				F.Intrinsic.Math.Div(V.Odbc.conP!rstDate.FieldValFloat!GWt,V.Local.fGWT1,V.Local.fGWT1)
+				F.Intrinsic.Math.Mult(V.Local.fGWT1,V.Local.iMult,V.Local.fGWT)
+				F.Intrinsic.Math.Add(V.Local.f2GWT,V.ODBC.conP!rstDate.FieldValFloat!GWt,V.Local.f2GWT)
+			F.Intrinsic.Control.Else
+				V.Local.fGWT.Set(0)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			V.Local.fGWT.Set(0)
+		F.Intrinsic.Control.EndIf
+		Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,2,V.Odbc.conP!rstDate.FieldValFloat!Labor_Hrs)
+		Function.Intrinsic.Control.If(V.Odbc.conP!rstDate.FieldValFloat!Labor_Hrs,>,0)
+			Function.Intrinsic.Control.AndIf(V.Local.fLHrs1,>,0)
+			F.Intrinsic.Math.Div(V.Odbc.conP!rstDate.FieldValFloat!Labor_Hrs,V.Local.fLHrs1,V.Local.fLHrs1)
+			F.Intrinsic.Math.Mult(V.Local.fLHrs1,V.Local.iMult,V.Local.fLHrs)
+			F.Intrinsic.Math.Add(V.Local.f2LHrs,V.ODBC.conP!rstDate.FieldValFloat!Labor_Hrs,V.Local.f2LHrs)
+		F.Intrinsic.Control.Else
+			V.Local.fLHrs.Set(0)
+		F.Intrinsic.Control.EndIf
+		Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,3,V.Odbc.conP!rstDate.FieldValFloat!Material)
+		Function.Intrinsic.Control.If(V.Odbc.conP!rstDate.FieldValFloat!Material,>,0)
+			F.Intrinsic.Control.If(V.Local.fMtl1,<>,0)
+				F.Intrinsic.Math.Div(V.Odbc.conP!rstDate.FieldValFloat!Material,V.Local.fMtl1,V.Local.fMtl1)
+				F.Intrinsic.Math.Mult(V.Local.fMtl1,V.Local.iMult,V.Local.fMtl)
+				F.Intrinsic.Math.Add(V.Local.f2Mtl,V.ODBC.conP!rstDate.FieldValFloat!Material,V.Local.f2Mtl)
+			F.Intrinsic.Control.Else
+				V.Local.fMtl.Set(0)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			V.Local.fMtl.Set(0)
+		F.Intrinsic.Control.EndIf
+		Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,4,V.Odbc.conP!rstDate.FieldValFloat!Labor)
+		Function.Intrinsic.Control.If(V.Odbc.conP!rstDate.FieldValFloat!Labor,>,0)
+			F.Intrinsic.Control.If(V.Local.fLab1,>,0)
+				F.Intrinsic.Math.Div(V.Odbc.conP!rstDate.FieldValFloat!Labor,V.Local.fLab1,V.Local.fLab1)
+				F.Intrinsic.Math.Mult(V.Local.fLab1,V.Local.iMult,V.Local.fLab)
+				F.Intrinsic.Math.Add(V.Local.f2Lab,V.ODBC.conP!rstDate.FieldValFloat!Labor,V.Local.f2Lab)
+			F.Intrinsic.Control.Else
+				V.Local.fLab.Set(0)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			V.Local.fLab.Set(0)
+		F.Intrinsic.Control.EndIf
+		Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,5,V.Odbc.conP!rstDate.FieldValFloat!Overhead)
+		Function.Intrinsic.Control.If(V.Odbc.conP!rstDate.FieldValFloat!OverHead,>,0)
+			F.Intrinsic.Control.If(V.Local.fOvhd1,>,0)
+				F.Intrinsic.Math.Div(V.Odbc.conP!rstDate.FieldValFloat!Overhead,V.Local.fOvhd1,V.Local.fOvhd1)
+				F.Intrinsic.Math.Mult(V.Local.fOvhd1,V.Local.iMult,V.Local.fOvhd)
+				F.Intrinsic.Math.Add(V.Local.f2Ovhd,V.ODBC.conP!rstDate.FieldValFloat!Overhead,V.Local.f2OvHd)
+			F.Intrinsic.Control.Else
+				V.Local.fOvhd.Set(0)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			V.Local.fOvhd.Set(0)
+		F.Intrinsic.Control.EndIf
+		Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,6,V.Odbc.conP!rstDate.FieldValFloat!Outside)
+		Function.Intrinsic.Control.If(V.Odbc.conP!rstDate.FieldValFloat!Outside,>,0)
+			F.Intrinsic.Control.If(V.Local.fOut1,>,0)
+				F.Intrinsic.Math.Div(V.Odbc.conP!rstDate.FieldValFloat!Outside,V.Local.fOut1,V.Local.fOut1)
+				F.Intrinsic.Math.Mult(V.Local.fOut1,V.Local.iMult,V.Local.fOut)
+				F.Intrinsic.Math.Add(V.Local.f2Out,V.ODBC.conP!rstDate.FieldValFloat!Outside,V.Local.f2Out)
+			F.Intrinsic.Control.Else
+				V.Local.fOut.Set(0)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			V.Local.fOut.Set(0)
+		F.Intrinsic.Control.EndIf
+		Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,7,V.Odbc.conP!rstDate.FieldValFloat!Total)
+		Function.Intrinsic.Control.If(V.Odbc.conP!rstDate.FieldValFloat!Total,>,0)
+			F.Intrinsic.Control.If(V.Local.fTot1,>,0)
+				F.Intrinsic.Math.Div(V.Odbc.conP!rstDate.FieldValFloat!Total,V.Local.fTot1,V.Local.fTot1)
+				F.Intrinsic.Math.Mult(V.Local.fTot1,V.Local.iMult,V.Local.fTot)
+				F.Intrinsic.Math.Add(V.Local.f2Tot,V.ODBC.conP!rstDate.FieldValFloat!Total,V.Local.f2Tot)
+			F.Intrinsic.Control.Else
+				V.Local.fTot.Set(0)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			V.Local.fTot.Set(0)
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.String.Concat("Comparison ",V.Local.iNo,V.Local.sParent)
+		'F.Intrinsic.UI.Msgbox(V.Local.sParent)
+'		V.Local.sParent.Set("Comparison")
+		Gui.F_CompRep.lvwReport.AddListItem(V.Local.sParent,"Comparison (Percent)")
+		Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,1,V.Local.fGWT)
+		Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,2,V.Local.fLHrs)
+		Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,3,V.Local.fMtl)
+		Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,4,V.Local.fLab)
+		Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,5,V.Local.fOvhd)
+		Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,6,V.Local.fOut)
+		Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,7,V.Local.fTot)
+		F.Intrinsic.Math.Add(V.Local.iNo,1,V.Local.iNo)
+		V.Local.fGWT.Set(0)
+		V.Local.fLHrs.Set(0)
+		V.local.fMtl.Set(0)
+		V.Local.fLab.Set(0)
+		V.Local.fOvhd.Set(0)
+		V.Local.fOut.Set(0)
+		V.Local.fTot.Set(0)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conP!rstDate.MoveNext
+F.Intrinsic.Control.Loop
+'F.Intrinsic.Math.Add(V.Local.iNo,1,V.Local.iNo)
+F.Intrinsic.String.Concat("ComparisonA ",V.Local.iNo,V.Local.sParent)
+Gui.F_CompRep.lvwReport.AddListItem(V.Local.sParent,"Comparison Total A")
+Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,1,V.Local.f1GWT1)
+Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,2,V.Local.f1LHrs1)
+Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,3,V.Local.f1Mtl1)
+Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,4,V.Local.f1Lab1)
+Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,5,V.Local.f1Ovhd1)
+Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,6,V.Local.f1Out1)
+Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,7,V.Local.f1Tot1)
+F.Intrinsic.Math.Add(V.Local.iNo,1,V.Local.iNo)
+F.Intrinsic.String.Concat("ComparisonB ",V.Local.iNo,V.Local.sParent)
+Gui.F_CompRep.lvwReport.AddListItem(V.Local.sParent,"Comparison Total B")
+Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,1,V.Local.f2GWT)
+Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,2,V.Local.f2LHrs)
+Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,3,V.Local.f2Mtl)
+Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,4,V.Local.f2Lab)
+Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,5,V.Local.f2Ovhd)
+Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,6,V.Local.f2Out)
+Gui.F_CompRep.lvwReport.Setlistitemsubitemtext(V.Local.sParent,7,V.Local.f2Tot)
+
+F.ODBC.conP!rstDate.Close
+Gui.F_CompRep.cmdRun.Enabled(True)
+
+Program.Sub.DateRange.End
+
+Program.Sub.RPT_Select.Start
+Gui.F_CompRep.cmdRun.Enabled(False)
+V.Global.sBoM1.Set("")
+V.Global.sBOM2.Set("")
+'F.Intrinsic.Debug.Stop
+F.Intrinsic.Control.if(V.Screen.F_CompRep!optRep1.Value,=,True)
+	F.Intrinsic.Control.CallSub("Select_BOM")
+F.Intrinsic.Control.ElseIf(V.Screen.F_CompRep!optRep2.Value,=,True)
+	F.Intrinsic.Control.CallSub("DateLU")
+F.Intrinsic.Control.EndIf
+
+Program.Sub.RPT_Select.End
+
+Program.Sub.DateClose.Start
+V.Local.sDate.Declare(String)
+V.Local.sEDate.Declare(String)
+V.Local.dateStart.Declare(Date)
+V.Local.dateEnd.Declare(Date)
+
+'F.Intrinsic.Debug.Stop
+F.Intrinsic.String.Format(V.Screen.F_Date!dtpStart.Value,"YYYY-MM-DD",V.Global.sSDate)
+F.Intrinsic.String.Format(V.Screen.F_Date!dtpEnd.Value,"YYYY-MM-DD",V.Global.sEDate)
+'F.Intrinsic.String.Concat(Variable.Screen.F_Date!dtpStart.Value," 12:00:01 AM",V.Global.ssDate)
+'V.Global.dateStart.Set(Variable.Screen.F_Date!dtpStart.Value)
+'F.Intrinsic.String.Concat(Variable.Screen.F_Date!dtpEnd.Value," 11:59:00 PM",V.Global.sEDate)
+'V.Global.dateEnd.Set(Variable.Screen.F_Date!dtpEnd.Value)
+
+
+Gui.F_Date..Visible(False)
+
+F.Intrinsic.Control.CallSub("DateRange")
+
+Program.Sub.DateClose.End
+
+Program.Sub.DateLU.Start
+Gui.F_Date..Show
+
+
+
+Program.Sub.DateLU.End
+
+
