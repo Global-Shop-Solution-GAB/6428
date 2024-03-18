@@ -1,0 +1,241 @@
+Program.Sub.ScreenSU.Start
+gui.F_PDesc..create
+gui.F_PDesc..caption("Long Part Description")
+gui.F_PDesc..size(7935,10425)
+gui.F_PDesc..position(0,0)
+gui.F_PDesc..event(unload,ProgramEnd)
+gui.F_PDesc..fontname("arial")
+gui.F_PDesc..fontsize(8)
+gui.F_PDesc..fontstyle(False,False,False,False,False)
+gui.F_PDesc..BackColor(-2147483633)
+gui.F_PDesc.lblPart.create(label)
+gui.F_PDesc.lblPart.caption("Part No")
+gui.F_PDesc.lblPart.visible(True)
+gui.F_PDesc.lblPart.size(1095,255)
+gui.F_PDesc.lblPart.zorder(0)
+gui.F_PDesc.lblPart.position(100,200)
+gui.F_PDesc.lblPart.enabled(True)
+gui.F_PDesc.lblPart.fontname("arial")
+gui.F_PDesc.lblPart.fontsize(8)
+gui.F_PDesc.txtPart.create(textbox)
+gui.F_PDesc.txtPart.text("")
+gui.F_PDesc.txtPart.visible(True)
+gui.F_PDesc.txtPart.size(1890,315)
+gui.F_PDesc.txtPart.zorder(0)
+gui.F_PDesc.txtPart.position(100,400)
+gui.F_PDesc.txtPart.enabled(True)
+gui.F_PDesc.txtPart.fontname("arial")
+gui.F_PDesc.txtPart.fontsize(8)
+gui.F_PDesc.lblRev.create(label)
+gui.F_PDesc.lblRev.caption("Rev")
+gui.F_PDesc.lblRev.visible(True)
+gui.F_PDesc.lblRev.size(375,255)
+gui.F_PDesc.lblRev.zorder(0)
+gui.F_PDesc.lblRev.position(2100,200)
+gui.F_PDesc.lblRev.enabled(True)
+gui.F_PDesc.lblRev.fontname("arial")
+gui.F_PDesc.lblRev.fontsize(8)
+gui.F_PDesc.txtRev.create(textbox)
+gui.F_PDesc.txtRev.text("")
+gui.F_PDesc.txtRev.visible(True)
+gui.F_PDesc.txtRev.size(585,315)
+gui.F_PDesc.txtRev.zorder(0)
+gui.F_PDesc.txtRev.position(2000,400)
+gui.F_PDesc.txtRev.enabled(True)
+gui.F_PDesc.txtRev.fontname("arial")
+gui.F_PDesc.txtRev.fontsize(8)
+gui.F_PDesc.lblLoc.create(label)
+gui.F_PDesc.lblLoc.caption("Loc")
+gui.F_PDesc.lblLoc.visible(True)
+gui.F_PDesc.lblLoc.size(1095,255)
+gui.F_PDesc.lblLoc.zorder(0)
+gui.F_PDesc.lblLoc.position(2800,200)
+gui.F_PDesc.lblLoc.enabled(True)
+gui.F_PDesc.lblLoc.fontname("arial")
+gui.F_PDesc.lblLoc.fontsize(8)
+gui.F_PDesc.txtLoc.create(textbox)
+gui.F_PDesc.txtLoc.text("")
+gui.F_PDesc.txtLoc.visible(True)
+gui.F_PDesc.txtLoc.size(525,315)
+gui.F_PDesc.txtLoc.zorder(0)
+gui.F_PDesc.txtLoc.position(2800,400)
+gui.F_PDesc.txtLoc.enabled(True)
+gui.F_PDesc.txtLoc.fontname("arial")
+gui.F_PDesc.txtLoc.fontsize(8)
+gui.F_PDesc.mtxtPDesc.create(textboxm)
+gui.F_PDesc.mtxtPDesc.text("")
+gui.F_PDesc.mtxtPDesc.visible(True)
+gui.F_PDesc.mtxtPDesc.size(7485,7950)
+gui.F_PDesc.mtxtPDesc.zorder(0)
+gui.F_PDesc.mtxtPDesc.position(100,1100)
+gui.F_PDesc.mtxtPDesc.enabled(True)
+gui.F_PDesc.mtxtPDesc.fontname("arial")
+gui.F_PDesc.mtxtPDesc.fontsize(8)
+gui.F_PDesc.lblPDesc.create(label)
+gui.F_PDesc.lblPDesc.caption("Extended Part Description")
+gui.F_PDesc.lblPDesc.visible(True)
+gui.F_PDesc.lblPDesc.size(2250,255)
+gui.F_PDesc.lblPDesc.zorder(0)
+gui.F_PDesc.lblPDesc.position(200,800)
+gui.F_PDesc.lblPDesc.enabled(True)
+gui.F_PDesc.lblPDesc.fontname("arial")
+gui.F_PDesc.lblPDesc.fontsize(8)
+gui.F_PDesc.lblDesc.create(label)
+gui.F_PDesc.lblDesc.caption("Part Description")
+gui.F_PDesc.lblDesc.visible(True)
+gui.F_PDesc.lblDesc.size(1725,255)
+gui.F_PDesc.lblDesc.zorder(0)
+gui.F_PDesc.lblDesc.position(4000,200)
+gui.F_PDesc.lblDesc.enabled(True)
+gui.F_PDesc.lblDesc.fontname("arial")
+gui.F_PDesc.lblDesc.fontsize(8)
+gui.F_PDesc.txtDesc.create(textbox)
+gui.F_PDesc.txtDesc.text("")
+gui.F_PDesc.txtDesc.visible(True)
+gui.F_PDesc.txtDesc.size(3420,315)
+gui.F_PDesc.txtDesc.zorder(0)
+gui.F_PDesc.txtDesc.position(3900,400)
+gui.F_PDesc.txtDesc.enabled(True)
+gui.F_PDesc.txtDesc.fontname("arial")
+gui.F_PDesc.txtDesc.fontsize(8)
+gui.F_PDesc.cmdClear.create(button)
+gui.F_PDesc.cmdClear.caption("Clear")
+gui.F_PDesc.cmdClear.visible(True)
+gui.F_PDesc.cmdClear.size(975,375)
+gui.F_PDesc.cmdClear.zorder(0)
+gui.F_PDesc.cmdClear.position(2000,9200)
+gui.F_PDesc.cmdClear.enabled(True)
+gui.F_PDesc.cmdClear.fontname("arial")
+gui.F_PDesc.cmdClear.fontsize(8)
+gui.F_PDesc.cmdClear.event(click,Clear)
+gui.F_PDesc.cmdSave.create(button)
+gui.F_PDesc.cmdSave.caption("Save")
+gui.F_PDesc.cmdSave.visible(True)
+gui.F_PDesc.cmdSave.size(975,375)
+gui.F_PDesc.cmdSave.zorder(0)
+gui.F_PDesc.cmdSave.position(4600,9200)
+gui.F_PDesc.cmdSave.enabled(True)
+gui.F_PDesc.cmdSave.fontname("arial")
+gui.F_PDesc.cmdSave.fontsize(8)
+gui.F_PDesc.cmdSave.event(click,Save)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Variable.Global.sPart.Declare(String)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'RequiresadditionalPervasivetablescreatedwithATG_PART_EXTENDED.sql
+Variable.Local.sDSN.Declare(String)
+Variable.Local.sText.Declare(String)
+
+Function.Intrinsic.String.Concat("Global_",Variable.Caller.Companycode,Variable.Local.sDSN)
+Function.Odbc.Connection!Con.Openconnection(Variable.Local.sDSN,"Master","isotanks")
+'Program.Sub.Control.Stop
+'QuoteLines
+Function.Intrinsic.Control.If(Variable.Caller.Caller,=,"QTE201")
+	Function.Intrinsic.Control.CallSub("Fill_Screen")
+'SalesOrderLines
+Function.Intrinsic.Control.Elseif(Variable.Caller.Caller,=,"ORD201")
+	Function.Intrinsic.Control.CallSub("Fill_Screen")
+Function.Intrinsic.Control.Else
+	Function.Intrinsic.String.Concat("Caller Info ",Variable.Caller.Caller,Variable.Local.sText)
+	Function.Intrinsic.UI.Msgbox(Variable.Local.stext)
+	Function.Intrinsic.Control.CallSub("ProgramEnd")
+Function.Intrinsic.Control.EndIf
+
+Gui.F_PDesc..Show
+
+
+Program.Sub.Main.End
+
+Program.Sub.Fill_Screen.Start
+Variable.Local.sSQL.Declare(String)
+Variable.Local.bPart.Declare(Boolean)
+Variable.Local.bLoc.Declare(Boolean)
+
+Gui.F_PDesc.txtPart.Text(Variable.Passed.000052)
+Gui.F_PDesc.txtRev.Text(Variable.Passed.000053)
+Gui.F_PDesc.txtLoc.Text(Variable.Passed.000054)
+Gui.F_PDesc.txtDesc.Text(Variable.Passed.000056)
+'Program.Sub.Control.Stop
+
+'Program.Sub.Control.Stop
+Function.Intrinsic.String.Concat("Select * from ATG_PART_EXTENDED where Part='",Variable.Passed.000052,"' and Rev='",Variable.Passed.000053,"' and Loc='",Variable.Passed.000054,"'",Variable.Local.sSQL)
+Function.ODBC.Connection!Con.OpenRecordsetRW("rst",Variable.Local.sSQL)
+Function.Intrinsic.Control.If(Variable.Odbc.Con!rst.EOF,=,False)
+	Gui.F_PDesc.mtxtPDesc.Text(Variable.Odbc.Con!rst.FieldVal!ExtDescription)
+Function.Intrinsic.Control.EndIf
+Function.ODBC.Con!rst.Close
+Gui.F_PDesc..Show
+
+Program.Sub.Fill_Screen.End
+
+Program.Sub.ProgramEnd.Start
+Function.Intrinsic.Control.If(Variable.Odbc.Con.State,=,1)
+	Function.Odbc.Connection!Con.Close
+Function.Intrinsic.Control.Endif
+Function.Intrinsic.Control.End
+
+Program.Sub.ProgramEnd.End
+
+Program.Sub.Save.Start
+Variable.Local.sSQL.Declare(String)
+Variable.Local.bPart.Declare(Boolean)
+Variable.Local.bLoc.Declare(Boolean)
+
+Function.Intrinsic.Control.If(Variable.Passed.000053,=,"")
+	Variable.local.bPart.Set(True)
+Function.Intrinsic.Control.ElseIf(Variable.Passed.000053,<>,"")
+	Variable.local.bPart.Set(False)
+Function.Intrinsic.Control.EndIf
+
+'Function.Intrinsic.UI.Msgbox(Variable.Local.bPart)
+Function.Intrinsic.Control.If(Variable.Passed.000054,=,"")
+	Variable.local.bLoc.Set(True)
+Function.Intrinsic.Control.ElseIf(Variable.Passed.000054,<>,"")
+	Variable.local.bLoc.Set(False)
+Function.Intrinsic.Control.EndIf
+Program.Sub.Control.Stop
+'Function.Intrinsic.UI.Msgbox(Variable.Local.bLoc)
+Function.Intrinsic.Control.If(Variable.Local.bPart,=,True)
+	Function.intrinsic.Control.If(Variable.Local.bLoc,=,True)
+		Function.Intrinsic.String.Concat("Select * from ATG_PART_EXTENDED where Part='",Variable.Passed.000052,"'",Variable.Local.sSQL)
+	Function.intrinsic.Control.ElseIf(Variable.Local.bLoc,=,False)
+		Function.Intrinsic.String.Concat("Select * from ATG_PART_EXTENDED where Part='",Variable.Passed.000052,"' and Loc='",Variable.Passed.000054,"'",Variable.Local.sSQL)
+	Function.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.elseIf(Variable.Local.bPart,=,False)
+	Function.intrinsic.Control.ElseIf(Variable.Local.bLoc,=,False)
+		Function.Intrinsic.String.Concat("Select * from ATG_PART_EXTENDED where Part='",Variable.Passed.000052,"' and Rev='",Variable.Passed.000053,"' and Loc='",Variable.Passed.000054,"'",Variable.Local.sSQL)
+	Function.intrinsic.Control.AndIf(Variable.Local.bLoc,=,True)
+		Function.Intrinsic.String.Concat("Select * from ATG_PART_EXTENDED where Part='",Variable.Passed.000052,"' and Rev='",Variable.Passed.000053,"'",Variable.Local.sSQL)
+	Function.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.EndIf
+
+'Function.Intrinsic.String.Concat("Select * from ATG_PART_EXTENDED where Part='",Variable.Passed.000052,"' and Rev='",Variable.Passed.000053,"' and Loc='",Variable.Passed.000054,"'",Variable.Local.sSQL)
+'Function.Intrinsic.ui.Msgbox(Variable.Local.ssql)
+Function.ODBC.Connection!Con.OpenRecordsetRW("rst",Variable.Local.sSQL)
+Function.Intrinsic.Control.If(Variable.Odbc.Con!rst.EOF,=,True)
+	Function.ODBC.Con!rst.AddNew
+	Function.ODBC.Con!rst.Set!Part(Variable.Passed.000052)
+	Function.ODBC.Con!rst.Set!Rev(Variable.Passed.000053)
+	Function.ODBC.Con!rst.Set!Loc(Variable.Passed.000054)
+	Function.ODBC.Con!rst.Set!Description(Variable.Passed.000056)
+Function.Intrinsic.Control.EndIf
+Function.ODBC.Con!rst.Set!ExtDescription(Variable.Screen.F_PDesc!mtxtPDesc.Text)
+Function.ODBC.Con!rst.Update
+Function.ODBC.Con!rst.Close
+
+
+
+Program.Sub.Save.End
+
+Program.Sub.Clear.Start
+Gui.F_PDesc.mtxtPDesc.Text("")
+
+Program.Sub.Clear.End
+
+
